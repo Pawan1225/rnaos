@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rnaos"
+version = "0.1.0"
+description = "RNAOS - Research Native Autonomous Operating System"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+
+authors = [
+    { name = "J. K. Pawan Kumar" }
+]
+
+keywords = [
+    "ai",
+    "quantum",
+    "rna",
+    "optimization",
+    "bioinformatics",
+    "research"
+]
+
+dependencies = []
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["."]
+exclude = [
+    "tests*",
+    "research*",
+    "docs*",
+    "artifacts*",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.mypy]
+python_version = "3.11"
