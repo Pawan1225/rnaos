@@ -22,7 +22,7 @@ DIRECTORIES = [
     "packages/common",
     "packages/config",
     "packages/database",
-    "packages/logging",
+    "packages/core_logging",
     "packages/schemas",
     "services/aoie",
     "services/optimization",
