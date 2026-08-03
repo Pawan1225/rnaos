@@ -1,38 +1,37 @@
 """
-Objective Function Generator
-
-Converts an AIProfile into a solver-independent optimization objective.
+RNA Folding Objective Generator.
 """
 
 from __future__ import annotations
 
-from ai_intelligence.profilers.ai_profiler import AIProfile
+from folding.profilers.folding_profiler import FoldingProfile
 
-from optimization.models.optimization_problem import ObjectiveFunction
+from optimization.models.optimization_problem import (
+    ObjectiveFunction,
+)
 
 
 class ObjectiveFunctionGenerator:
-    """Generates optimization objectives."""
+    """
+    Generate biologically meaningful optimization objectives.
+    """
 
-    def generate(self, profile: AIProfile) -> ObjectiveFunction:
+    def generate(
+        self,
+        folding_profile: FoldingProfile,
+    ) -> ObjectiveFunction:
         """
-        Generate an optimization objective.
+        Generate a thermodynamic objective.
 
-        Current strategy:
-            Minimize predicted optimization complexity.
-
-        Future versions:
-            - Minimum Free Energy
-            - Stability maximization
-            - Multi-objective optimization
-            - Learned objectives
+        Version 1:
+        Minimize the free-energy gap relative to the
+        minimum free-energy (MFE) structure.
         """
 
-        score = profile.complexity.score
+        thermodynamics = folding_profile.thermodynamics
 
-        expression = f"minimize_complexity(score={score:.4f})"
+        expression = f"Minimize ΔG (MFE={thermodynamics.mfe:.2f} kcal/mol)"
 
         return ObjectiveFunction(
             expression=expression,
-            sense="minimize",
         )

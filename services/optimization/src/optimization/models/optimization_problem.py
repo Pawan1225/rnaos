@@ -56,12 +56,32 @@ class Constraint:
 
 @dataclass(slots=True)
 class OptimizationMetadata:
-    """Metadata describing an optimization problem."""
+    """
+    Metadata describing an RNA folding optimization problem.
+    """
 
+    # Existing metadata
     solver_hint: str
     complexity_score: float
+
+    # RNA folding metadata
+    candidate_pair_count: int = 0
+    conflict_count: int = 0
+    search_space_density: float = 0.0
+
+    mfe: float = 0.0
+    energy_gap: float = 0.0
+
+    # Existing extensibility fields
     tags: list[str] = field(default_factory=list)
     extra: dict[str, Any] = field(default_factory=dict)
+
+    @property
+    def estimated_qubo_size(self) -> int:
+        """
+        Estimated number of binary variables in the QUBO.
+        """
+        return self.candidate_pair_count
 
 
 @dataclass(slots=True)
@@ -86,10 +106,17 @@ class OptimizationProblem:
 
 @dataclass(slots=True)
 class QUBOProblem:
-    """Quadratic Unconstrained Binary Optimization problem."""
+    """
+    Quadratic Unconstrained Binary Optimization problem.
+    """
 
     matrix: list[list[float]]
+
     variable_names: list[str]
+
+    penalty: float = 10.0
+
+    metadata: dict[str, Any] = field(default_factory=dict)
 
     @property
     def size(self) -> int:

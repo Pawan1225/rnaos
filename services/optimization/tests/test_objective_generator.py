@@ -1,18 +1,14 @@
-from ai_intelligence.profilers.ai_profiler import AIProfiler
+from folding.profilers.folding_profiler import FoldingProfiler
 from optimization.objectives.objective_generator import (
     ObjectiveFunctionGenerator,
 )
-from rna_intelligence.profilers.rna_profiler import RNAProfiler
 
 
-def test_generate_objective():
-    """Test objective generation from an AI profile."""
+def test_objective_generation():
+    folding = FoldingProfiler().profile("GGGAAAUCC")
 
-    rna_profile = RNAProfiler().profile("GGGAAAUCC")
+    objective = ObjectiveFunctionGenerator().generate(folding)
 
-    ai_profile = AIProfiler().profile(rna_profile)
+    assert "ΔG" in objective.expression
 
-    objective = ObjectiveFunctionGenerator().generate(ai_profile)
-
-    assert objective.sense == "minimize"
-    assert "complexity" in objective.expression
+    assert "MFE" in objective.expression
