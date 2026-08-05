@@ -1,0 +1,21 @@
+"""
+RNAOS log level definitions.
+"""
+
+from __future__ import annotations
+
+from enum import StrEnum
+
+
+class LogLevel(StrEnum):
+    """Supported log levels."""
+
+    DEBUG = "debug"
+
+    INFO = "info"
+
+    WARNING = "warning"
+
+    ERROR = "error"
+
+    CRITICAL = "critical"
