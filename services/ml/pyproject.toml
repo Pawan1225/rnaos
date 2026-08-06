@@ -3,9 +3,9 @@ requires = ["setuptools>=69", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "rnaos-cloud"
+name = "rnaos-ml"
 version = "0.1.0"
-description = "RNAOS Cloud Service"
+description = "RNAOS Biological Intelligence Framework"
 requires-python = ">=3.11"
 
 [tool.setuptools]

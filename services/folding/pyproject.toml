@@ -3,7 +3,7 @@ requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "folding"
+name = "rnaos-folding"
 version = "0.1.0"
 description = "RNAOS RNA Folding Intelligence Service"
 readme = "README.md"

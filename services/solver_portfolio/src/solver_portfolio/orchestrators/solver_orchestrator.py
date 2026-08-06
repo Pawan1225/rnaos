@@ -50,10 +50,28 @@ class SolverOrchestrator:
     def solve(
         self,
         profile: OptimizationProfile,
+        preferred_solver: str | None = None,
     ) -> SolverResult:
-        """Execute the recommended solver."""
+        """
+        Execute an optimization solver.
 
-        solver_name = profile.problem.metadata.solver_hint
+        Parameters
+        ----------
+        profile
+            Optimization profile to solve.
+
+        preferred_solver
+            Optional solver override. If not provided, the solver
+            recommended by the optimization profile is used. If the
+            requested solver is unavailable, the orchestrator falls
+            back to the greedy solver.
+        """
+
+        solver_name = (
+            preferred_solver
+            if preferred_solver is not None
+            else profile.problem.metadata.solver_hint
+        )
 
         if not self.registry.exists(
             solver_name,

@@ -9,11 +9,11 @@ description = "RNAOS Production Platform"
 requires-python = ">=3.11"
 
 dependencies = [
-    "analytics",
-    "decision",
-    "research",
-    "solver",
-    "optimization",
+    "rnaos-analytics",
+    "rnaos-decision",
+    "rnaos-research",
+    "rnaos-solver",
+    "rnaos-optimization",
 ]
 
 [tool.setuptools]
