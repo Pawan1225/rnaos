@@ -13,6 +13,15 @@ SUPPORTED_MODELS = (
     "gaussian_process",
 )
 
+PREDICTION_TARGETS = (
+    "folding_difficulty",
+    "expected_mfe",
+    "structural_stability",
+    "solver_suitability",
+    "runtime_estimation",
+    "optimization_complexity",
+)
+
 DEFAULT_RANDOM_SEED = 42
 
 DEFAULT_CROSS_VALIDATION_FOLDS = 5
