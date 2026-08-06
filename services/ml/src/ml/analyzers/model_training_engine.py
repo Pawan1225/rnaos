@@ -68,8 +68,10 @@ class ModelTrainingEngine:
         return TrainedModel(
             model_name=model_name,
             estimator=trained,
-            score=score,
+            metric_name="cross_validation_score",
+            metric_value=score,
             training_time=training_time,
             feature_count=dataset.feature_count,
             sample_count=dataset.sample_count,
+            training_status="completed",
         )

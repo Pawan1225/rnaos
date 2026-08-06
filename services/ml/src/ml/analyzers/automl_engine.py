@@ -5,6 +5,10 @@ RNAOS AutoML engine.
 from __future__ import annotations
 
 import time
+from datetime import (
+    UTC,
+    datetime,
+)
 
 from ml.analyzers.model_training_engine import (
     ModelTrainingEngine,
@@ -34,7 +38,9 @@ class AutoMLEngine:
     Train and rank multiple machine learning models.
     """
 
-    def __init__(self) -> None:
+    def __init__(
+        self,
+    ) -> None:
         """Initialize the AutoML engine."""
 
         self._training_engine = ModelTrainingEngine()
@@ -72,7 +78,7 @@ class AutoMLEngine:
         total_training_time = time.perf_counter() - start_time
 
         trained_models.sort(
-            key=lambda model: model.score,
+            key=lambda model: model.metric_value,
             reverse=True,
         )
 
@@ -90,4 +96,8 @@ class AutoMLEngine:
             experiment_id=generate_experiment_id(
                 dataset.dataset_version,
             ),
+            experiment_timestamp=datetime.now(
+                UTC,
+            ).isoformat(),
+            random_seed=configuration.random_seed,
         )

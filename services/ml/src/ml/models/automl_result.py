@@ -6,11 +6,11 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
+from ml.models.automl_configuration import (
+    AutoMLConfiguration,
+)
 from ml.models.trained_model import (
     TrainedModel,
-)
-from ml.models.training_configuration import (
-    TrainingConfiguration,
 )
 
 
@@ -26,13 +26,17 @@ class AutoMLResult:
 
     ranking: tuple[str, ...]
 
-    training_configuration: TrainingConfiguration
+    training_configuration: AutoMLConfiguration
 
     total_training_time: float
 
     dataset_version: str
 
     experiment_id: str
+
+    experiment_timestamp: str
+
+    random_seed: int
 
     @property
     def model_count(
@@ -55,13 +59,22 @@ class AutoMLResult:
         return self.best_model.model_name
 
     @property
-    def best_score(
+    def best_metric_name(
+        self,
+    ) -> str:
+        """
+        Name of the evaluation metric.
+        """
+        return self.best_model.metric_name
+
+    @property
+    def best_metric_value(
         self,
     ) -> float:
         """
-        Best evaluation score.
+        Best evaluation metric value.
         """
-        return self.best_model.score
+        return self.best_model.metric_value
 
     @property
     def is_empty(

@@ -167,8 +167,10 @@ def test_score_range(
         configuration,
     )
 
+    assert profile.metric_name == "cross_validation_score"
+
     assert isinstance(
-        profile.score,
+        profile.metric_value,
         float,
     )
 
@@ -252,11 +254,13 @@ def test_deterministic_training(
 
     assert first.model_name == second.model_name
 
+    assert first.metric_name == second.metric_name
+
     assert (
         pytest.approx(
-            first.score,
+            first.metric_value,
         )
-        == second.score
+        == second.metric_value
     )
 
 

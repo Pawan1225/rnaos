@@ -5,7 +5,10 @@ RNAOS trained model.
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Any
+
+from sklearn.base import (
+    BaseEstimator,
+)
 
 
 @dataclass(slots=True, frozen=True)
@@ -16,15 +19,19 @@ class TrainedModel:
 
     model_name: str
 
-    estimator: Any
+    estimator: BaseEstimator
 
-    score: float
+    metric_name: str
+
+    metric_value: float
 
     training_time: float
 
     feature_count: int
 
     sample_count: int
+
+    training_status: str
 
     @property
     def is_trained(
