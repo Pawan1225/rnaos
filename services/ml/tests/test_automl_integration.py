@@ -25,8 +25,8 @@ from ml.constants import (
     DEFAULT_SHUFFLE,
     SUPPORTED_MODELS,
 )
-from ml.models.training_configuration import (
-    TrainingConfiguration,
+from ml.models.automl_configuration import (
+    AutoMLConfiguration,
 )
 
 
@@ -77,7 +77,7 @@ def test_complete_ml_pipeline() -> None:
 
     assert selected.feature_count == 10
 
-    configuration = TrainingConfiguration(
+    configuration = AutoMLConfiguration(
         model_names=SUPPORTED_MODELS,
         cross_validation_folds=DEFAULT_CROSS_VALIDATION_FOLDS,
         random_seed=DEFAULT_RANDOM_SEED,

@@ -10,24 +10,16 @@ from dataclasses import dataclass
 @dataclass(slots=True, frozen=True)
 class TrainingConfiguration:
     """
-    Immutable AutoML training configuration.
+    Immutable model training configuration.
+
+    Defines the configuration required to train
+    exactly one machine learning model.
     """
 
-    model_names: tuple[str, ...]
+    model_name: str
 
     cross_validation_folds: int
 
     random_seed: int
 
     shuffle: bool
-
-    @property
-    def model_count(
-        self,
-    ) -> int:
-        """
-        Number of configured models.
-        """
-        return len(
-            self.model_names,
-        )

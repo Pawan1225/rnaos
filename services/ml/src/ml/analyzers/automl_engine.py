@@ -6,6 +6,12 @@ from __future__ import annotations
 
 import time
 
+from ml.analyzers.model_training_engine import (
+    ModelTrainingEngine,
+)
+from ml.models.automl_configuration import (
+    AutoMLConfiguration,
+)
 from ml.models.automl_result import (
     AutoMLResult,
 )
@@ -18,15 +24,8 @@ from ml.models.trained_model import (
 from ml.models.training_configuration import (
     TrainingConfiguration,
 )
-from ml.utils.cross_validation import (
-    evaluate_model,
-)
 from ml.utils.experiment_utils import (
     generate_experiment_id,
-)
-from ml.utils.training_utils import (
-    create_model,
-    train_model,
 )
 
 
@@ -35,49 +34,39 @@ class AutoMLEngine:
     Train and rank multiple machine learning models.
     """
 
+    def __init__(self) -> None:
+        """Initialize the AutoML engine."""
+
+        self._training_engine = ModelTrainingEngine()
+
     def analyze(
         self,
         dataset: MLDataset,
-        configuration: TrainingConfiguration,
+        configuration: AutoMLConfiguration,
     ) -> AutoMLResult:
         """
         Execute the AutoML pipeline.
         """
+
         trained_models: list[TrainedModel] = []
 
         start_time = time.perf_counter()
 
         for model_name in configuration.model_names:
-            model = create_model(
-                model_name,
+            training_configuration = TrainingConfiguration(
+                model_name=model_name,
+                cross_validation_folds=configuration.cross_validation_folds,
+                random_seed=configuration.random_seed,
+                shuffle=configuration.shuffle,
             )
 
-            model_start = time.perf_counter()
-
-            trained = train_model(
-                model=model,
-                features=dataset.features,
-                targets=dataset.targets,
-            )
-
-            training_time = time.perf_counter() - model_start
-
-            score = evaluate_model(
-                model=trained,
-                features=dataset.features,
-                targets=dataset.targets,
-                folds=configuration.cross_validation_folds,
+            trained_model = self._training_engine.analyze(
+                dataset=dataset,
+                configuration=training_configuration,
             )
 
             trained_models.append(
-                TrainedModel(
-                    model_name=model_name,
-                    estimator=trained,
-                    score=score,
-                    training_time=training_time,
-                    feature_count=dataset.feature_count,
-                    sample_count=dataset.sample_count,
-                )
+                trained_model,
             )
 
         total_training_time = time.perf_counter() - start_time
