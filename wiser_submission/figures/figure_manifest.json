@@ -1,0 +1,21 @@
+{
+  "version": "RNAOS_v1.0",
+  "figures": [
+    {
+      "name": "accuracy_vs_length.png",
+      "source": "400 benchmark experiments"
+    },
+    {
+      "name": "energy_gap_distribution.png",
+      "source": "RNAOS energy comparison"
+    },
+    {
+      "name": "runtime_scaling.png",
+      "source": "benchmark runtime data"
+    },
+    {
+      "name": "quantum_resource_scaling.png",
+      "source": "quantum resource estimation"
+    }
+  ]
+}

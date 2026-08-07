@@ -109,3 +109,9 @@ research/notebooks/.ipynb_checkpoints/
 
 artifacts/exports/*
 !artifacts/exports/.gitkeep
+
+###############################################################################
+# RNAOS Generated Validation
+###############################################################################
+
+validation_results/

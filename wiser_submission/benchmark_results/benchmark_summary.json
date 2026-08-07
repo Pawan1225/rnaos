@@ -1,0 +1,8 @@
+{
+  "total_experiments": 400,
+  "completed": 400,
+  "failed": 0,
+  "benchmark_id": "RNAOS_LARGE_BENCHMARK_V1",
+  "dataset_size": 400,
+  "seed": 42
+}

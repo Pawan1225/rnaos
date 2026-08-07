@@ -1,0 +1,44 @@
+{
+  "project": "RNAOS",
+  "title": "Quantum-Inspired Optimization for mRNA Secondary Structure Prediction",
+  "program": "WISER Global Quantum+AI Program 2026",
+  "challenge": "WISER <> Moderna - Optimization of mRNA Secondary Structure Prediction Using Quantum Computing",
+  "version": "RNAOS Benchmark V1.0",
+
+  "developer": {
+    "name": "J. K. Pawan Kumar",
+    "role": "Project Lead and Sole Developer"
+  },
+
+  "benchmark": {
+    "dataset_type": "Synthetic RNA sequences",
+    "total_experiments": 400,
+    "sequence_lengths": [
+      20,
+      40,
+      60,
+      80
+    ]
+  },
+
+  "results": {
+    "average_accuracy": 1.0,
+    "average_f1_score": 0.9725,
+    "average_energy_gap": 0.0,
+    "maximum_estimated_qubits": 160
+  },
+
+  "evidence": {
+    "benchmark_results": "benchmark_results/",
+    "scientific_analysis": "scientific_analysis/",
+    "figures": "figures/",
+    "documentation": "documentation/"
+  },
+
+  "reproducibility": {
+    "benchmark_generation": "services/validation/scripts/run_large_campaign.py",
+    "scientific_analysis": "services/validation/scripts/generate_scientific_evidence.py",
+    "statistics_generation": "services/validation/scripts/generate_benchmark_statistics.py",
+    "figure_generation": "services/validation/scripts/generate_publication_figures.py"
+  }
+}
