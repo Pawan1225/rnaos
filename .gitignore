@@ -115,3 +115,8 @@ artifacts/exports/*
 ###############################################################################
 
 validation_results/
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
