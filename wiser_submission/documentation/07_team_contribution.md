@@ -4,14 +4,29 @@
 
 RNAOS was developed as an individual research project for the WISER Global Quantum+AI Program 2026 challenge.
 
-The project covered the complete development lifecycle:
+The project involved the complete research and development lifecycle:
 
-- research and problem analysis
-- RNA optimization framework design
-- quantum-inspired formulation
-- benchmark implementation
-- scientific validation
-- documentation preparation
+~~~text
+Research
+   |
+   v
+Problem Formulation
+   |
+   v
+System Architecture Design
+   |
+   v
+Implementation
+   |
+   v
+Benchmark Validation
+   |
+   v
+Scientific Analysis
+   |
+   v
+Final Submission Preparation
+~~~
 
 ---
 
@@ -22,82 +37,99 @@ The project covered the complete development lifecycle:
 Role:
 
 ~~~text
-Project Lead and Sole Developer
+Project Lead
+Researcher
+Software Developer
 ~~~
-
----
-
-# Background
-
-J. K. Pawan Kumar is an Artificial Intelligence and Quantum Computing researcher with experience in developing AI, quantum, and high-performance computing based systems.
-
-His technical interests include:
-
-- artificial intelligence
-- quantum machine learning
-- quantum optimization
-- scientific computing
-- high-performance computing workflows
-
-Previous technical work has involved:
-
-- machine learning model development
-- quantum algorithm experimentation
-- optimization problems
-- scalable computing environments
-
-This background motivated the development of RNAOS as an exploration of how quantum-inspired optimization techniques can be applied to complex biological computation problems.
 
 ---
 
 # Contributions
 
-## Research and Problem Formulation
+## Research and Problem Analysis
 
-Contributions:
+Responsibilities:
 
-- Studied RNA secondary structure prediction challenges.
-- Reviewed classical Minimum Free Energy (MFE) folding approaches.
+- Studied RNA secondary structure prediction.
+- Reviewed Minimum Free Energy (MFE) folding approaches.
 - Investigated quantum and quantum-inspired optimization methods.
 - Formulated RNA folding as an optimization problem.
 
 ---
 
-## RNAOS Architecture Development
+## RNAOS System Development
 
-Designed and implemented the RNAOS framework including:
+Designed and implemented:
 
-- RNA secondary structure optimization pipeline
-- candidate structure generation
+~~~text
+RNA Sequence Input
+
+        |
+        v
+
+Candidate Structure Generation
+
+        |
+        v
+
+Structure Validation
+
+        |
+        v
+
+Energy Evaluation
+
+        |
+        v
+
+Energy-Aware Optimization
+
+        |
+        v
+
+Benchmark Analysis
+~~~
+
+Technical contributions included:
+
+- RNA candidate generation framework
 - biological constraint validation
-- thermodynamic energy evaluation
-- energy-aware optimization workflow
-- benchmark evaluation system
+- energy-aware optimization engine
+- benchmark evaluation pipeline
 
 ---
 
-## Benchmark and Validation
+## Experimental Validation
 
-Developed the validation pipeline including:
+Developed and executed:
 
-- ViennaRNA reference generation
-- RNA structure comparison
-- energy gap analysis
+- synthetic RNA benchmark generation
+- ViennaRNA reference comparison
+- structural similarity analysis
+- energy gap evaluation
 - runtime scaling analysis
 - quantum resource estimation
 
-Generated experimental evidence from:
+Generated:
 
 ~~~text
-400 RNA benchmark experiments
+400 Benchmark Experiments
+
+        |
+        v
+
+Scientific Evidence
+
+        |
+        v
+
+Analysis Reports
+
+        |
+        v
+
+Visualization Figures
 ~~~
-
-including:
-
-- structure accuracy measurements
-- F1 similarity analysis
-- energy comparison
-- resource scaling evaluation
 
 ---
 
@@ -105,23 +137,17 @@ including:
 
 Prepared:
 
-- technical documentation
+- challenge documentation
+- technical methodology
 - benchmark reports
 - scientific analysis
-- visualization figures
+- figures
 - WISER submission package
 
 ---
 
 # Contribution Summary
 
-J. K. Pawan Kumar completed the full development lifecycle of RNAOS, including:
+J. K. Pawan Kumar completed the full development process of RNAOS, including research, architecture design, implementation, validation, analysis, and final documentation.
 
-- research
-- architecture design
-- implementation
-- validation
-- analysis
-- documentation
-
-The project represents an individual effort to explore quantum-inspired optimization approaches for RNA secondary structure prediction.
+The project demonstrates an individual effort toward exploring quantum-inspired optimization methods for RNA secondary structure prediction.

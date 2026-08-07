@@ -10,111 +10,117 @@
 
 # Project Overview
 
-RNAOS (RNA Optimization System) is a quantum-inspired hybrid optimization framework developed to investigate mRNA secondary structure prediction.
+RNAOS (RNA Optimization System) is a quantum-inspired hybrid optimization framework developed for exploring mRNA secondary structure prediction.
 
-The project explores how optimization-based approaches can be used to search for low-energy RNA secondary structures while benchmarking against classical Minimum Free Energy (MFE) folding methods.
+The project investigates how optimization methods can be applied to RNA folding while benchmarking against classical Minimum Free Energy (MFE) structures generated using ViennaRNA.
 
-RNAOS combines:
+RNAOS focuses on:
 
-- RNA structural constraints
+- RNA structure candidate generation
+- biological constraint validation
 - thermodynamic energy evaluation
-- optimization-based candidate selection
+- energy-aware optimization
 - quantum resource estimation
-
-The objective is not to claim quantum advantage, but to investigate how quantum-inspired optimization concepts can support future RNA folding research.
 
 ---
 
-# Challenge Problem
+# Challenge Background
 
-mRNA secondary structure influences important biological properties including:
+mRNA secondary structure plays an important role in RNA-based medicines.
+
+RNA structure can influence:
 
 - molecular stability
 - translation efficiency
 - manufacturability
 
-However, RNA folding is computationally challenging because a single RNA sequence can produce many possible secondary structures.
+However, RNA folding is computationally challenging because a single RNA sequence can form many possible secondary structures.
 
-Classical tools such as ViennaRNA use dynamic programming and thermodynamic models to identify Minimum Free Energy structures.
-
-The WISER <> Moderna challenge explores whether quantum or quantum-inspired optimization methods can help investigate this complex search problem.
+The WISER <> Moderna challenge explores whether quantum or quantum-inspired optimization methods can help investigate RNA folding landscapes.
 
 ---
 
-# RNAOS Approach
+# RNAOS Solution Approach
 
-RNAOS formulates RNA secondary structure prediction as a constrained optimization problem.
-
-The workflow:
+RNAOS implements a hybrid optimization pipeline:
 
 ~~~text
 RNA Sequence
 
       |
+      v
 
 Candidate Structure Generation
 
       |
+      v
 
-Biological Constraint Validation
+RNA Constraint Validation
 
       |
+      v
 
 Energy Evaluation
 
       |
+      v
 
 Energy-Aware Optimization
 
       |
+      v
 
 Benchmark Comparison
 ~~~
 
-The framework:
-
-- generates candidate structures
-- validates biological constraints
-- evaluates thermodynamic energy
-- compares against ViennaRNA references
-- analyzes scaling behavior
+The system generates valid RNA structures, evaluates their thermodynamic energy, and compares predictions against ViennaRNA reference MFE structures.
 
 ---
 
-# Methods Used
-
-RNAOS investigated multiple approaches.
+# Methods and Tools
 
 ## Classical Methods
 
-ViennaRNA was used for:
+ViennaRNA is used for:
 
-- MFE reference generation
-- energy evaluation
+- Minimum Free Energy reference generation
+- structure energy evaluation
 - benchmark comparison
 
 ---
 
-## AI Methods
+## Optimization Methods
 
-AI approaches were considered for:
+RNAOS uses:
 
-- learned structure representations
-- candidate generation
-- future optimization guidance
+~~~text
+Candidate Generation
+
+        +
+
+Biological Constraints
+
+        +
+
+Energy Optimization
+
+        +
+
+Structure Validation
+~~~
 
 ---
 
-## Quantum and Quantum-Inspired Methods
+## Quantum-Inspired Analysis
 
-Potential future formulations include:
+RNAOS includes:
 
-- QAOA
-- Variational Quantum Algorithms
-- Quantum Annealing
-- Tensor-network-inspired optimization
+- optimization formulation
+- estimated variables
+- qubit resource analysis
+- scaling evaluation
 
-The final implementation uses a quantum-inspired optimization framework that can run on classical resources while remaining compatible with future quantum implementations.
+The project does not claim quantum advantage but provides a framework compatible with future quantum optimization methods.
 
 ---
 
@@ -123,15 +129,20 @@ The final implementation uses a quantum-inspired optimization framework that can
 RNAOS was evaluated using:
 
 ~~~text
-400 synthetic RNA benchmark sequences
+400 synthetic RNA sequences
 ~~~
 
 Sequence lengths:
 
-- 20 nucleotides
-- 40 nucleotides
-- 60 nucleotides
-- 80 nucleotides
+~~~text
+20 nucleotides
+
+40 nucleotides
+
+60 nucleotides
+
+80 nucleotides
+~~~
 
 Evaluation metrics:
 
@@ -139,17 +150,17 @@ Evaluation metrics:
 - F1 similarity score
 - energy gap
 - runtime scaling
-- estimated quantum resources
+- quantum resource estimation
 
 ---
 
-# Key Results
+# Results
 
 ## Structure Accuracy
 
-Average accuracy:
-
 ~~~text
+Average Accuracy:
+
 1.0
 ~~~
 
@@ -157,35 +168,33 @@ Average accuracy:
 
 ## Structural Similarity
 
-Average F1 score:
-
 ~~~text
+Average F1 Score:
+
 0.9725
 ~~~
 
 ---
 
-## Energy Agreement
-
-Average energy gap:
+## Energy Evaluation
 
 ~~~text
+Average Energy Gap:
+
 0.0
 ~~~
 
 ---
 
-## Quantum Resource Analysis
-
-Maximum estimated qubit requirement:
+## Quantum Resource Scaling
 
 ~~~text
-160 qubits
+Maximum Estimated Qubits:
+
+160
 ~~~
 
-for 80 nucleotide RNA sequences.
-
-These values represent resource estimation for future quantum implementations.
+The resource estimation represents theoretical requirements for future quantum implementations.
 
 ---
 
@@ -195,40 +204,41 @@ These values represent resource estimation for future quantum implementations.
 wiser_submission/
 
 ├── benchmark_results/
-│
+
+│   └── Experimental benchmark outputs
+
+
 ├── scientific_analysis/
-│
+
+│   └── Scientific evaluation reports
+
+
 ├── figures/
-│
-└── documentation/
+
+│   └── Generated benchmark visualizations
+
+
+├── documentation/
+
+│   └── Complete technical documentation
+
+└── submission_manifest.json
 ~~~
-
----
-
-# Documentation
-
-Detailed project documentation:
-
-- [Documentation Index](documentation/DOCUMENTATION_INDEX.md)
-- [Problem Statement](documentation/01_problem_statement.md)
-- [Background Review](documentation/02_background_review.md)
-- [Solution Approach](documentation/03_solution_approach.md)
-- [Methods and Tools](documentation/04_methods_and_tools.md)
-- [Results and Findings](documentation/05_results_and_findings.md)
-- [Limitations and Future Work](documentation/06_limitations_and_future_work.md)
-- [Team Contribution](documentation/07_team_contribution.md)
 
 ---
 
 # Evidence Package
 
+The submission contains:
+
 ## Benchmark Results
 
-Contains:
+Includes:
 
 - experiment results
 - benchmark statistics
-- execution metadata
+- benchmark summary
+- execution manifest
 
 Location:
 
@@ -240,7 +250,7 @@ benchmark_results/
 
 ## Scientific Analysis
 
-Contains:
+Includes:
 
 - accuracy analysis
 - energy gap analysis
@@ -256,14 +266,14 @@ scientific_analysis/
 
 ---
 
-## Figures
+## Visualizations
 
-Contains:
+Generated figures include:
 
-- accuracy scaling
-- energy distribution
+- accuracy versus sequence length
+- energy gap distribution
 - runtime scaling
-- quantum resource scaling visualizations
+- quantum resource scaling
 
 Location:
 
@@ -275,7 +285,7 @@ figures/
 
 # Reproducibility
 
-The complete benchmark pipeline can be reproduced using:
+The complete validation workflow can be reproduced using:
 
 ~~~text
 python services/validation/scripts/run_large_campaign.py
@@ -294,9 +304,9 @@ python services/validation/scripts/generate_publication_figures.py
 Current limitations:
 
 - synthetic benchmark sequences
-- no execution on real quantum hardware
-- pseudoknot structures not included
-- resource estimates represent theoretical requirements
+- no real quantum hardware execution
+- pseudoknot structures are not included
+- resource estimates represent theoretical scaling
 
 ---
 
@@ -305,32 +315,46 @@ Current limitations:
 Future development directions:
 
 - QAOA-based RNA optimization
-- VQE formulations
-- pseudoknot-aware structures
+- variational quantum approaches
 - AI-assisted candidate generation
-- noisy quantum simulation
-- real quantum hardware evaluation
+- larger RNA datasets
+- pseudoknot-aware modeling
+- quantum hardware experiments
 
 ---
 
-# Team
+# Team Contribution
 
 ## J. K. Pawan Kumar
 
 Role:
 
 ~~~text
-Project Lead and Sole Developer
+Project Lead
+
+Researcher
+
+Software Developer
 ~~~
 
 Contributions:
 
-- research and problem formulation
 - RNAOS architecture design
-- implementation
+- optimization framework implementation
 - benchmark development
-- scientific validation
+- validation pipeline
+- scientific analysis
 - documentation preparation
+
+---
+
+# Detailed Documentation
+
+Additional technical details are available in:
+
+~~~text
+documentation/
+~~~
 
 ---
 
