@@ -3,7 +3,7 @@
 ## Project Documentation
 
 | Document | Description |
-|---|---|
+| ------------------------------------- | ----------------------------------------------------- |
 | 01_problem_statement.md | Challenge background and RNA folding problem |
 | 02_background_review.md | RNA biology, MFE folding, and optimization background |
 | 03_solution_approach.md | RNAOS architecture and optimization workflow |
@@ -11,6 +11,8 @@
 | 05_results_and_findings.md | Benchmark results and scientific findings |
 | 06_limitations_and_future_work.md | Current limitations and future roadmap |
 | 07_team_contribution.md | Developer background and project contribution |
+| 08_installation_and_execution.md | Installation requirements, execution workflow, and reproducibility instructions |
+| 09_references.md | Research papers, software references, and external resources |
 
 ---
 
@@ -24,6 +26,15 @@ Contains:
 - benchmark statistics
 - execution metadata
 
+### 06_experimental_evidence/
+
+Contains:
+
+- scientific benchmark evidence
+- accuracy analysis
+- energy gap analysis
+- runtime scaling analysis
+- quantum resource scaling analysis
 
 ### scientific_analysis/
 
@@ -33,7 +44,6 @@ Contains:
 - energy gap analysis
 - runtime scaling
 - quantum resource analysis
-
 
 ### figures/
 

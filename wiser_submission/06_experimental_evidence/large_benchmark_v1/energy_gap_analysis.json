@@ -1,0 +1,9 @@
+{
+  "metric": "energy_gap",
+  "total_samples": 400,
+  "average_gap": 0.0,
+  "minimum_gap": 0.0,
+  "maximum_gap": 0.0,
+  "average_rnaos_energy": -5.0625,
+  "average_reference_energy": -5.0625
+}

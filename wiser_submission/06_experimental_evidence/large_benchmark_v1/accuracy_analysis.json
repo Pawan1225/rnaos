@@ -1,0 +1,11 @@
+{
+  "metric": "accuracy",
+  "total_samples": 400,
+  "average_accuracy": 1.0,
+  "accuracy_distribution": {
+    "20": 1.0,
+    "40": 1.0,
+    "60": 1.0,
+    "80": 1.0
+  }
+}
